@@ -1,0 +1,23 @@
+body {
+    background: teal;
+}
+
+.top-div {
+    background: lightblue;
+}
+
+.main-container {
+    background: yellow;
+    display: flex;
+    width: 100%;
+}
+
+.current-container {
+    background: lightgreen;
+    width: 40%;
+}
+
+.finished-conatiner {
+    background: pink;
+    width: 40%;
+}
