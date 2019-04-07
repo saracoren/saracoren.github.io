@@ -1,27 +1,28 @@
 // console.log('hello')
+let userInput = ""
 
 $(() => {
     // GET https://www.googleapis.com/books/v1/volumes?q=time&printType=magazines&key=yourAPIKey
 
+const getUserInput = () => {
+    userInput = $('.input-text').val()
+    console.log(userInput)
+}
+
 const getData = () => {$.ajax({
     url: "https://www.googleapis.com/books/v1/volumes?q=time&printType=books&key=AIzaSyD4fQutk55ce3kvbO8in6uPvpLpWwVieOM",
-    type: "GET",
-    data: {
-        items: {}
-    }
+    type: "GET"
 }).then(function(data) {
-    for (let i = 0; i < 10; i++)
+    for (let i = 0; i < 5; i++)
     console.log(data.items[i].volumeInfo.title)
 })
 }
- getData()
-
-    // $('button').on('click', (event) => {
-    //     event.preventDefault()
-    //     someFunctiontoSaveValue()
-    // })
 
 
-
+$('button').on('click', (event) => {
+    event.preventDefault()
+    getUserInput()
+    // getData()
+})
 
 })

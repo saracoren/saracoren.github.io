@@ -4,20 +4,47 @@ body {
 
 .top-div {
     background: lightblue;
+    text-align: center;
+    padding: 2%;
+    margin: 3%;
 }
 
 .main-container {
     background: yellow;
     display: flex;
     width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: center;
 }
 
 .current-container {
     background: lightgreen;
     width: 40%;
+    height: 300px;
+    text-align: center;
 }
 
 .finished-conatiner {
     background: pink;
     width: 40%;
+    height: 300px;
+    text-align: center;
+}
+
+.input-text {
+    height: 40px;
+    width: 300px;
+    font-size: 22px;
+    padding-left: 20px;
+}
+
+button {
+    height: 48px;
+    width: 100px;
+    margin-left: 10px;
+    border-radius: 10px;
+    font-size: 22px;
 }
