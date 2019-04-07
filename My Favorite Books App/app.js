@@ -14,15 +14,18 @@ const getData = () => {$.ajax({
     type: "GET"
 }).then(function(data) {
     for (let i = 0; i < 5; i++)
-    console.log(data.items[i].volumeInfo.title)
+    // console.log(data.items[i].volumeInfo.imageLinks.thumbnail)
+    $('<img>').attr('src', data.items[i].volumeInfo.imageLinks.thumbnail).appendTo(
+    $('.current-container'))
+
 })
 }
 
 
 $('button').on('click', (event) => {
     event.preventDefault()
-    getUserInput()
-    // getData()
+    // getUserInput()
+    getData()
 })
 
 })
