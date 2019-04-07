@@ -1,7 +1,6 @@
 // console.log('hello')
-// let userInput = ""
 
-// GET https://www.googleapis.com/books/v1/volumes?q=time&printType=bookss&key=yourAPIKey
+// GET https://www.googleapis.com/books/v1/volumes?q=time&printType=books&key=yourAPIKey
 
 //key = AIzaSyD4fQutk55ce3kvbO8in6uPvpLpWwVieOM
 
@@ -9,7 +8,8 @@
 
 const baseUrl = "https://www.googleapis.com/books/v1/volumes?q="
 
-const apiKey = "key=AIzaSyD4fQutk55ce3kvbO8in6uPvpLpWwVieOM"
+//api key is not needed for this search
+// const apiKey = "key=AIzaSyD4fQutk55ce3kvbO8in6uPvpLpWwVieOM"
 
 // const queryType = "q="
 
@@ -33,7 +33,7 @@ const getBook = () => {$.ajax({
     $('<img><br>').attr('src', data.items[i].volumeInfo.imageLinks.thumbnail).appendTo(
     $('.current-container'))
     // $('<br>').appendTo($('img'))
-
+    
 })
 }
 
@@ -43,6 +43,10 @@ $('button').on('click', (event) => {
     titleQuery = $('input[type="text"]').val()
     // getUserInput()
     getBook()
+    // $('event.currentTarget').trigger('reset')
+    // $('.input-text').trigger('reset')
+    // $('.input-text').empty()
+    $('.input-text').val('')
 })
 
 })
