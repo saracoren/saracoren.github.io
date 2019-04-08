@@ -50,23 +50,25 @@ const getBook = () => {$.ajax({
     $('<button>').attr('class', 'delete').text('Delete').appendTo($buttonDiv).on('click', () => {
         $delete()
     })
+    const $openModal = () => {
+        const $modal = $('<div>').attr('class', 'modal')
+        const $modalTextBox = $('<div>').attr('class', 'modal-textbox')
+        const $closeModalLink = $('<a>').attr('class', 'close-modal').attr('href', '#').text('Close')
+        $('body').append($modal)
+        $($modal).append($modalTextBox)
+        $modalTextBox.append($closeModalLink)
+        const $blurbTitle = $('<h1>').text(data.items[0].volumeInfo.title)
+        $modalTextBox.append($blurbTitle)
+        const $closeBtn = $('.close-modal')
+        $closeBtn.on('click', () => {
+            // console.log('close button')
+            $modal.css('display', 'none')
+        })
+    }
     
 })
 }
 
-const $openModal = () => {
-    const $modal = $('<div>').attr('class', 'modal')
-    const $modalTextBox = $('<div>').attr('class', 'modal-textbox')
-    const $closeModalLink = $('<a>').attr('class', 'close-modal').attr('href', '#').text('Close')
-    $('body').append($modal)
-    $($modal).append($modalTextBox)
-    $modalTextBox.append($closeModalLink)
-    const $closeBtn = $('.close-modal')
-    $closeBtn.on('click', () => {
-        // console.log('close button')
-        $modal.css('display', 'none')
-    })
-}
 
 
 const $moveToFinished = () => {
