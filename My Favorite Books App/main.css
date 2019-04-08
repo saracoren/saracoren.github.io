@@ -71,4 +71,12 @@ button {
     background-color: burlywood;
     border-radius: 5px;
     height: 30px;
+    width: 100px;
+}
+
+.delete {
+    background-color: orange;
+    border-radius: 5px;
+    height: 30px;
+    width: 100px;
 }

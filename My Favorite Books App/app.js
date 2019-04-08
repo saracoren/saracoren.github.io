@@ -39,8 +39,11 @@ const getBook = () => {$.ajax({
     //make a div for the buttons and append it to the thumbnail div
     const $buttonDiv = $('<div>').attr('class', 'button-div').appendTo($div)
     //make a button and append it to the thumbnail
-    $('<button>').attr('class', 'move-to-finished').appendTo($buttonDiv).on('click', () => {
+    $('<button>').attr('class', 'move-to-finished').text('Move').appendTo($buttonDiv).on('click', () => {
         $moveToFinished()
+    })
+    $('<button>').attr('class', 'delete').text('Delete').appendTo($buttonDiv).on('click', () => {
+        $delete()
     })
     // $('<br>').appendTo($('img'))
     
@@ -51,6 +54,9 @@ const $moveToFinished = () => {
         $(event.currentTarget).parent().parent().appendTo('.finished-container')
         // console.log('test test')
     }
+const $delete = () => {
+        $(event.currentTarget).parent().parent().remove()
+}
 
 $('.search').on('click', (event) => {
     event.preventDefault()
