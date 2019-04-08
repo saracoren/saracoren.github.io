@@ -48,3 +48,23 @@ button {
     border-radius: 10px;
     font-size: 22px;
 }
+
+.thumbnail-div {
+    display: flex;
+    flex-direction: row;
+    background: plum;
+    width: 100%;
+    height: 200px;
+}
+
+.button-div {
+    background: gray;
+    width: 50%;
+    height: 100px;
+}
+
+.move-to-finished {
+    background-color: burlywood;
+    border-radius: 5px;
+    height: 30px;
+}

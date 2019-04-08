@@ -28,10 +28,13 @@ const getBook = () => {$.ajax({
     url: baseUrl + titleQuery,
     type: "GET"
 }).then(function(data) {
-    for (let i = 0; i < 1; i++)
+    // for (let i = 0; i < 1; i++)
     // console.log(data.items[i].volumeInfo.imageLinks.thumbnail)
-    $('<img><br>').attr('src', data.items[i].volumeInfo.imageLinks.thumbnail).appendTo(
-    $('.current-container'))
+    $('<div>').attr('class', 'thumbnail-div').appendTo('.current-container')
+    $('<img><br>').attr('src', data.items[0].volumeInfo.imageLinks.thumbnail).appendTo(
+    $('.thumbnail-div'))
+    $('<div>').attr('class', 'button-div').appendTo('.thumbnail-div')
+    $('<button>').attr('class', 'move-to-finished').appendTo('.button-div')
     // $('<br>').appendTo($('img'))
     
 })
@@ -44,7 +47,7 @@ $('button').on('click', (event) => {
     // getUserInput()
     getBook()
     // $('event.currentTarget').trigger('reset')
-    // $('.input-text').trigger('reset')
+    // $('form').trigger('reset')
     // $('.input-text').empty()
     $('.input-text').val('')
 })
