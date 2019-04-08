@@ -57,12 +57,17 @@ const getBook = () => {$.ajax({
 const $openModal = () => {
     const $modal = $('<div>').attr('class', 'modal')
     const $modalTextBox = $('<div>').attr('class', 'modal-textbox')
-    const $closeModal = $('<a>').attr('class', 'close-modal').attr('href', '#').text('Close')
+    const $closeModalLink = $('<a>').attr('class', 'close-modal').attr('href', '#').text('Close')
     $('body').append($modal)
     $($modal).append($modalTextBox)
-    $modalTextBox.append($closeModal)
-    
+    $modalTextBox.append($closeModalLink)
+    const $closeBtn = $('.close-modal')
+    $closeBtn.on('click', () => {
+        // console.log('close button')
+        $modal.css('display', 'none')
+    })
 }
+
 
 const $moveToFinished = () => {
         $(event.currentTarget).parent().parent().appendTo('.finished-container')
