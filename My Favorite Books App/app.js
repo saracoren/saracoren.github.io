@@ -30,25 +30,29 @@ const getBook = () => {$.ajax({
 }).then(function(data) {
     // for (let i = 0; i < 1; i++)
     // console.log(data.items[i].volumeInfo.imageLinks.thumbnail)
-    $('<div>').attr('class', 'thumbnail-div').appendTo('.current-container')
-    $('<img><br>').attr('src', data.items[0].volumeInfo.imageLinks.thumbnail).appendTo(
-    $('.thumbnail-div'))
-    $('<div>').attr('class', 'button-div').appendTo('.thumbnail-div')
-    $('<button>').attr('class', 'move-to-finished').appendTo('.button-div')
+    //make a new thumbnail div and append it to current container
+    const $div = $('<div>').attr('class', 'thumbnail-div').appendTo('.current-container')
+
+    console.log(this)
+    //make a new image tag with the user input thumbnail data and append it to thumbnail div
+    $('<img>').attr('src', data.items[0].volumeInfo.imageLinks.thumbnail).appendTo($div)
+    //make a div for the buttons and append it to the thumbnail div
+    const $buttonDiv = $('<div>').attr('class', 'button-div').appendTo($div)
+    //make a button and append it to the thumbnail
+    $('<button>').attr('class', 'move-to-finished').appendTo($buttonDiv).on('click', () => {
+        $moveToFinished()
+    })
     // $('<br>').appendTo($('img'))
-    $moveToFinished()
     
 })
 }
 
 const $moveToFinished = () => {
-    $('.move-to-finished').on('click', (event) => {
         $(event.currentTarget).parent().parent().appendTo('.finished-container')
         // console.log('test test')
-    })
-}
+    }
 
-$('button').on('click', (event) => {
+$('.search').on('click', (event) => {
     event.preventDefault()
     titleQuery = $('input[type="text"]').val()
     // getUserInput()
