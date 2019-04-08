@@ -38,22 +38,40 @@ const getBook = () => {$.ajax({
     $('<img>').attr('src', data.items[0].volumeInfo.imageLinks.thumbnail).appendTo($div)
     //make a div for the buttons and append it to the thumbnail div
     const $buttonDiv = $('<div>').attr('class', 'button-div').appendTo($div)
-    //make a button and append it to the thumbnail
+    //make a move button and append it to the thumbnail
     $('<button>').attr('class', 'move-to-finished').text('Move').appendTo($buttonDiv).on('click', () => {
         $moveToFinished()
     })
+    //make an blurb button and append it to the thumbnail
+    $('<button>').attr('class', 'blurb').text('Blurb').appendTo($buttonDiv).on('click', () => {
+        $openModal()
+    })
+    //make a delete button and append it to the thumbnail
     $('<button>').attr('class', 'delete').text('Delete').appendTo($buttonDiv).on('click', () => {
         $delete()
     })
-    // $('<br>').appendTo($('img'))
     
 })
+}
+
+const $openModal = () => {
+    const $modal = $('<div>').attr('class', 'modal')
+    const $modalTextBox = $('<div>').attr('class', 'modal-textbox')
+    const $closeModal = $('<a>').attr('class', 'close-modal').attr('href', '#').text('Close')
+    $('body').append($modal)
+    $($modal).append($modalTextBox)
+    $modalTextBox.append($closeModal)
+    
 }
 
 const $moveToFinished = () => {
         $(event.currentTarget).parent().parent().appendTo('.finished-container')
         // console.log('test test')
     }
+
+// const $moveToCurrent = () => {
+//         $(event.currentTarget).parent().parent().appendTo()
+// }
 const $delete = () => {
         $(event.currentTarget).parent().parent().remove()
 }
@@ -63,10 +81,18 @@ $('.search').on('click', (event) => {
     titleQuery = $('input[type="text"]').val()
     // getUserInput()
     getBook()
-    // $('event.currentTarget').trigger('reset')
     // $('form').trigger('reset')
     // $('.input-text').empty()
     $('.input-text').val('')
 })
 
 })
+
+// $('<button>').attr('class', 'move-to-finished').text('Move').appendTo($buttonDiv)
+// if ($(event.currentTarget).parent().parent().parent() === ".current-container") {
+//     on('click', () => {
+//     $moveToFinished()
+// })
+// } else {
+//     $moveToCurrent()
+// }
