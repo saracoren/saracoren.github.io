@@ -31,9 +31,9 @@ const getBook = () => {$.ajax({
     // for (let i = 0; i < 1; i++)
     // console.log(data.items[i].volumeInfo.imageLinks.thumbnail)
     //make a new thumbnail div and append it to current container
+    
     const $div = $('<div>').attr('class', 'thumbnail-div').appendTo('.current-container')
 
-    console.log(this)
     //make a new image tag with the user input thumbnail data and append it to thumbnail div
     $('<img>').attr('src', data.items[0].volumeInfo.imageLinks.thumbnail).appendTo($div)
     //make a div for the buttons and append it to the thumbnail div
@@ -59,6 +59,8 @@ const getBook = () => {$.ajax({
         $modalTextBox.append($closeModalLink)
         const $blurbTitle = $('<h1>').text(data.items[0].volumeInfo.title)
         $modalTextBox.append($blurbTitle)
+        const $blurbPara = $('<p>').text(data.items[0].volumeInfo.description)
+        $modalTextBox.append($blurbPara)
         const $closeBtn = $('.close-modal')
         $closeBtn.on('click', () => {
             // console.log('close button')
