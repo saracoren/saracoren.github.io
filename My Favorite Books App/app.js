@@ -36,10 +36,17 @@ const getBook = () => {$.ajax({
     $('<div>').attr('class', 'button-div').appendTo('.thumbnail-div')
     $('<button>').attr('class', 'move-to-finished').appendTo('.button-div')
     // $('<br>').appendTo($('img'))
+    $moveToFinished()
     
 })
 }
 
+const $moveToFinished = () => {
+    $('.move-to-finished').on('click', (event) => {
+        $(event.currentTarget).parent().parent().appendTo('.finished-container')
+        // console.log('test test')
+    })
+}
 
 $('button').on('click', (event) => {
     event.preventDefault()
