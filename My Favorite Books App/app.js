@@ -39,8 +39,15 @@ const getBook = () => {$.ajax({
     //make a div for the buttons and append it to the thumbnail div
     const $buttonDiv = $('<div>').attr('class', 'button-div').appendTo($div)
     //make a move button and append it to the thumbnail
-    $('<button>').attr('class', 'move-to-finished').text('Move').appendTo($buttonDiv).on('click', () => {
-        $moveToFinished()
+    $('<button>').attr('class', 'move').text('Move').appendTo($buttonDiv).on('click', (event) => {
+        // $('<button>').attr('class', 'move-to-finished').text('Move').appendTo($buttonDiv)
+        console.log(typeof $(event.currentTarget).parent().parent().parent().attr('class'))
+if ($(event.currentTarget).parent().parent().parent().attr('class') === "current-container") {
+    console.log('I am in move to finish')
+    $moveToFinished()
+} else {
+    $moveToCurrent()
+}
     })
     //make an blurb button and append it to the thumbnail
     $('<button>').attr('class', 'blurb').text('Blurb').appendTo($buttonDiv).on('click', () => {
@@ -57,9 +64,9 @@ const getBook = () => {$.ajax({
         $('body').append($modal)
         $($modal).append($modalTextBox)
         $modalTextBox.append($closeModalLink)
-        const $blurbTitle = $('<h1>').text(data.items[0].volumeInfo.title)
+        const $blurbTitle = $('<h1>').attr('class', 'blurb-title').text(data.items[0].volumeInfo.title)
         $modalTextBox.append($blurbTitle)
-        const $blurbPara = $('<p>').text(data.items[0].volumeInfo.description)
+        const $blurbPara = $('<p>').attr('class', 'blurb-text').text(data.items[0].volumeInfo.description)
         $modalTextBox.append($blurbPara)
         const $closeBtn = $('.close-modal')
         $closeBtn.on('click', () => {
@@ -78,9 +85,9 @@ const $moveToFinished = () => {
         // console.log('test test')
     }
 
-// const $moveToCurrent = () => {
-//         $(event.currentTarget).parent().parent().appendTo()
-// }
+const $moveToCurrent = () => {
+        $(event.currentTarget).parent().parent().appendTo('.current-container')
+}
 const $delete = () => {
         $(event.currentTarget).parent().parent().remove()
 }
@@ -99,9 +106,7 @@ $('.search').on('click', (event) => {
 
 // $('<button>').attr('class', 'move-to-finished').text('Move').appendTo($buttonDiv)
 // if ($(event.currentTarget).parent().parent().parent() === ".current-container") {
-//     on('click', () => {
 //     $moveToFinished()
-// })
 // } else {
 //     $moveToCurrent()
 // }

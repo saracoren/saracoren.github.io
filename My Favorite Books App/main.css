@@ -3,36 +3,38 @@ body {
 }
 
 .top-div {
-    background: lightblue;
+    background: lightgray;
     text-align: center;
     padding: 2%;
     margin: 3%;
 }
 
 .main-container {
-    background: yellow;
+    background: teal;
     display: flex;
     width: 100%;
+    height: 100%; 
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-content: flex-start;
-    align-items: center;
+    align-items: stretch;
 }
 
 .current-container {
-    background: lightgreen;
+    background: rgb(233, 167, 142);
     width: 40%;
-    height: 800px;
+    min-height: 800px;
     text-align: center;
     display: flex;
     flex-direction: column;
+    overflow: auto;
 }
 
 .finished-container {
-    background: pink;
+    background: lightsteelblue;
     width: 40%;
-    height: 800px;
+    min-height: 800px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -56,33 +58,40 @@ button {
 .thumbnail-div {
     display: flex;
     flex-direction: row;
-    background: plum;
+    /* background: plum; */
     width: 100%;
     height: 200px;
 }
 
 .button-div {
-    background: gray;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid black;
     width: 100%;
-    height: 100px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: nowrap; */
+    justify-content: center;
+    content: center;
+    align-items: center;
 }
 
-.move-to-finished {
-    background-color: burlywood;
+.move {
+    background-color: lightgray;
     border-radius: 5px;
     height: 30px;
     width: 100px;
 }
 
 .delete {
-    background-color: orange;
+    background-color: lightgray;
     border-radius: 5px;
     height: 30px;
     width: 100px;
 }
 
 .blurb {
-    background-color: whitesmoke;
+    background-color: lightgray;
     border-radius: 5px;
     height: 30px;
     width: 100px;
@@ -103,8 +112,26 @@ button {
 
 .modal-textbox {
 	background-color: white;
-	height: 350px;
-	width: 550px;
+	height: 500px;
+	width: 650px;
     border-radius: 2px;
     margin: 150px auto;
+    border: 5px solid navy;
+}
+
+.blurb-title {
+    color: lightseagreen;
+    padding: 5px 20px 0px 20px;
+}
+
+.blurb-text {
+    color: navy;
+    padding: 0px 20px 5px 20px;
+    text-align: justify;
+}
+
+.close-modal {
+    color: navy;
+    padding: 20px;
+    /* text-decoration: none; */
 }
