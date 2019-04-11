@@ -150,10 +150,10 @@ button {
 
 .modal-textbox {
 	background-color: lightgray;
-	height: 300px;
+	height: 400px;
 	width: 500px;
     border-radius: 10px;
-    margin: 15% auto;
+    margin: 10% auto;
     border: 5px solid #707070;
     overflow: auto;
 }
@@ -175,9 +175,9 @@ button {
     text-decoration: none;
 }
 
-@media (min-height: 600px) {
+@media (max-width: 600px) {
     .modal-textbox {
-        height: 30%;
+        height: 70%;
         width: 70%;
     }
 }
