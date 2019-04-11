@@ -35,7 +35,8 @@ const getBook = () => {$.ajax({
     const $div = $('<div>').attr('class', 'thumbnail-div').appendTo('.current-container')
 
     //make a new image tag with the user input thumbnail data and append it to thumbnail div
-    $('<img>').attr('src', data.items[0].volumeInfo.imageLinks.thumbnail).appendTo($div)
+    const $picDiv = $('<div>').attr('class', 'pic-div').appendTo($div)
+    $('<img>').attr('src', data.items[0].volumeInfo.imageLinks.thumbnail).appendTo($picDiv)
     //make a div for the buttons and append it to the thumbnail div
     const $buttonDiv = $('<div>').attr('class', 'button-div').appendTo($div)
     //make a move button and append it to the thumbnail

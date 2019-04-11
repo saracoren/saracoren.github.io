@@ -21,6 +21,10 @@ body {
     align-items: stretch;
 }
 
+/* h2 {
+    font-size: 2.5em;
+} */
+
 .current-container {
     background: rgb(233, 167, 142);
     width: 40%;
@@ -59,16 +63,26 @@ button {
 .thumbnail-div {
     display: flex;
     flex-direction: row;
-    /* background: plum; */
+    background: rgba(0,0,0,0.2);
+    border: 2px solid black;
+    width: 99%;
+    height: 250px;
+}
+
+.pic-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
     width: 100%;
-    height: 200px;
+    height: 100%;
 }
 
 .button-div {
-    background: rgba(0,0,0,0.2);
-    border: 1px solid black;
+    /* background: rgba(0,0,0,0.2);
+    border: 1px solid black; */
     width: 100%;
-    height: 200px;
+    height: 100%;
     display: flex;
     flex-direction: row;
     /* flex-wrap: nowrap; */
@@ -89,6 +103,7 @@ button {
     border-radius: 5px;
     height: 30px;
     width: 100px;
+    margin-right: 10px;
 }
 
 .blurb {
@@ -112,37 +127,38 @@ button {
 }
 
 .modal-textbox {
-	background-color: white;
-	height: 500px;
-	width: 650px;
-    border-radius: 2px;
+	background-color: lightgray;
+	height: 300px;
+	width: 500px;
+    border-radius: 10px;
     margin: 150px auto;
-    border: 5px solid navy;
+    border: 5px solid #707070;
+    overflow: auto;
 }
 
 .blurb-title {
-    color: lightseagreen;
+    color: rgb(221, 112, 72);
     padding: 5px 20px 0px 20px;
 }
 
 .blurb-text {
-    color: navy;
+    color: teal;
     padding: 0px 20px 5px 20px;
     text-align: justify;
 }
 
 .close-modal {
-    color: navy;
+    color: teal;
     padding: 20px;
-    /* text-decoration: none; */
+    text-decoration: none;
 }
 
 @media (max-width: 1200px) {
     .button-div {
-        background: rgba(0,0,0,0.2);
-        border: 1px solid black;
+        /* background: rgba(0,0,0,0.2);
+        border: 1px solid black; */
         width: 100%;
-        height: 200px;
+        height: 100%;
         display: flex;
         flex-direction: column;
         /* flex-wrap: nowrap; */
@@ -157,25 +173,34 @@ button {
 }
 
 @media (max-width: 620px) {
+    /* h2 {
+        font-size: 34px;
+    } */
+    
     .thumbnail-div {
         display: flex;
         flex-direction: column;
         height: 320px;
-        width: 100%;
+        width: 99%;
         align-items: center;
         align-content: center;
         justify-content: baseline;
-        /* flex-direction: column;
-        align-items: space-between;
-        align-content: flex-end; */
     }
 
     .button-div {
-        height: 40%;
+        height: 30%;
     }
 
-    .img {
-        height: 60%;
+    .move, .delete, .blurb {
+        font-size: 12px;
+    }
+
+    .pic-div {
+        height: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
     }
 
     .current-container, .finished-container {
@@ -188,4 +213,48 @@ button {
 
 }
 
-@media (max-width: 320px)
+@media (max-width: 600px) {
+    h2 {
+        font-size: 22px;
+    }
+}
+@media (max-width: 550px) {
+    h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 520px) {
+    h2 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 500px) {
+    h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 450px) {
+    h2 {
+        font-size: 26px;
+    }
+}
+@media (max-width: 430px) {
+    h2 {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 370px) {
+    h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 340px) {
+    h2 {
+        font-size: 20px;
+    }
+}
