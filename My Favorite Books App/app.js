@@ -39,6 +39,10 @@ const getBook = () => {$.ajax({
     $('<img>').attr('src', data.items[0].volumeInfo.imageLinks.thumbnail).appendTo($picDiv)
     //make a div for the buttons and append it to the thumbnail div
     const $buttonDiv = $('<div>').attr('class', 'button-div').appendTo($div)
+    //make an blurb button and append it to the thumbnail
+    $('<button>').attr('class', 'blurb').text('Blurb').appendTo($buttonDiv).on('click', () => {
+        $openModal()
+    })
     //make a move button and append it to the thumbnail
     $('<button>').attr('class', 'move').text('Move').appendTo($buttonDiv).on('click', (event) => {
         // $('<button>').attr('class', 'move-to-finished').text('Move').appendTo($buttonDiv)
@@ -49,10 +53,6 @@ if ($(event.currentTarget).parent().parent().parent().attr('class') === "current
 } else {
     $moveToCurrent()
 }
-    })
-    //make an blurb button and append it to the thumbnail
-    $('<button>').attr('class', 'blurb').text('Blurb').appendTo($buttonDiv).on('click', () => {
-        $openModal()
     })
     //make a delete button and append it to the thumbnail
     $('<button>').attr('class', 'delete').text('Delete').appendTo($buttonDiv).on('click', () => {

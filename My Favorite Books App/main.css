@@ -1,5 +1,17 @@
 body {
     background: teal;
+    font-family: 'Bree Serif', serif;
+}
+
+h3 {
+    color: teal;
+}
+
+
+.body-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .top-div {
@@ -7,18 +19,21 @@ body {
     text-align: center;
     padding: 2%;
     margin: 3%;
+    width: 76%;
+    border: 5px solid white;
 }
 
 .main-container {
     background: teal;
     display: flex;
-    width: 100%;
+    width: 80%;
     height: 100%; 
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-content: flex-start;
     align-items: stretch;
+    border: 5px solid white;
 }
 
 /* h2 {
@@ -27,21 +42,27 @@ body {
 
 .current-container {
     background: rgb(233, 167, 142);
-    width: 40%;
+    width: 50%;
     min-height: 800px;
     text-align: center;
     display: flex;
     flex-direction: column;
     overflow: auto;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .finished-container {
     background: lightsteelblue;
-    width: 40%;
+    width: 50%;
     min-height: 800px;
     text-align: center;
     display: flex;
     flex-direction: column;
+    overflow: auto;
+    align-items: center;
+    justify-content: flex-start;
+    
 }
 
 .input-text {
@@ -64,9 +85,10 @@ button {
     display: flex;
     flex-direction: row;
     background: rgba(0,0,0,0.2);
-    border: 2px solid black;
-    width: 99%;
+    /* border: 2px solid black; */
+    width: 90%;
     height: 250px;
+    margin: 5px auto;
 }
 
 .pic-div {
@@ -160,7 +182,7 @@ button {
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
     .button-div {
         /* background: rgba(0,0,0,0.2);
         border: 1px solid black; */
@@ -179,7 +201,7 @@ button {
     }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 680px) {
     .thumbnail-div {
         display: flex;
         flex-direction: column;
@@ -211,7 +233,7 @@ button {
     }
 
     .input-text {
-        width: 250px;
+        width: 200px;
     }
 
 }
@@ -249,7 +271,7 @@ button {
         font-size: 26px;
     }
 }
-@media (max-width: 430px) {
+@media (max-width: 427px) {
     h2 {
         font-size: 24px;
     }
